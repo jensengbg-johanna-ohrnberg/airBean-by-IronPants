@@ -2,7 +2,7 @@ const menuItems = {
   state: {
     items: []
   },
-  mutaions: {
+  mutations: {
     sendMenuItems(state, items) {
       state.items = items
     }
