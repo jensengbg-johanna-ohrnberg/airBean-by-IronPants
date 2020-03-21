@@ -1,9 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {}
+</script>
 
+<style lang="scss">
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+}
 </style>
