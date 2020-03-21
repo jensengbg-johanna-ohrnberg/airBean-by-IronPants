@@ -8,12 +8,13 @@ const menuItems = {
     }
   },
   actions: {
-    async getMenuItems(ctx) {
+    getMenuItems(ctx) {
       const url = 'http://localhost:5000/api/beans'
-      const res = await fetch(url, { method: 'GET' })
-      const data = await res.json()
-
-      ctx.commit('sendMenuItems', data)
+      fetch(url, { method: 'GET' })
+        .then(res => res.json())
+        .then(data => {
+          ctx.commit('sendMenuItems', data)
+        })
     }
   }
 }
