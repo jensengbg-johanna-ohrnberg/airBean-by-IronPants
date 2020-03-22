@@ -1,7 +1,6 @@
 <template>
     <article id='home'>
-        <h1 class="title">AIR BEAN</h1>
-        <h6 class="subtitle">DRONEDELIVERED COFFEE</h6>
+        <img class="landing-page-info" src="../assets/graphics/airbean-landing.svg" alt="airbean logo">
     </article>
 </template>
 
@@ -9,7 +8,7 @@
 export default {
   name: 'Home',
   created () {
-    setTimeout(() => this.$router.push('/about'), 2000)
+    setTimeout(() => this.$router.push('/about'), 3000)
   }
 }
 </script>
@@ -18,23 +17,16 @@ export default {
    #home {
        border: 1px solid black;
        width: 375px;
-       height: 667px;
+       height: 660px;
        margin: auto;
-       background: #38846D;
-       display: grid;
-       grid-template-columns: 32% 150px 40%;
-       grid-template-rows: 40% 10% 10% 40%;
+       background-color: #38846D;
+       background-image: url("../assets/graphics/intro-graphic-left.svg"), url("../assets/graphics/intro-graphic-right.svg");
+       background-position: left, right;
+       background-repeat: no-repeat, no-repeat;
    }
 
-   .title {
-       color: #FFFFFF;
-       grid-column: 2 / 3;
-       grid-row: 2 / 3;
-   }
-
-   .subtitle {
-       color: #FFFFFF;
-       grid-column: 2 / 3;
-       grid-row: 3 / 4;
+   .landing-page-info {
+       margin: 16%;
+       margin-top: 50%;
    }
 </style>
