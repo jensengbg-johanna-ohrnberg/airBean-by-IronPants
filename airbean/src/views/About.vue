@@ -1,6 +1,6 @@
 <template>
     <article id='about'>
-        <MenuButton />
+            <MenuButton v-on:click="setOverlay" />
         <section>
             <h1 class="title">Vårt kaffe</h1>
             <p id="bold" class="paragraph">
@@ -46,7 +46,7 @@
         </section>
         <section>
             <img class="eva-img" src="../assets/graphics/eva-cortado.jpg" alt="eva-cortado">
-            <h2 class="name">Eva Cortado</h2>
+            <h2 class="eva-name">Eva Cortado</h2>
             <h6 class="eva-info">VD & Grundare</h6>
         </section>
     </article>
@@ -59,6 +59,11 @@ export default {
   name: 'About',
   components: {
     MenuButton
+  },
+  methods: {
+    setOverlay () {
+
+    }
   }
 }
 </script>
@@ -67,19 +72,30 @@ export default {
     #about {
        border: 1px solid black;
        width: 375px;
-       height: 667px;
+       height: auto;
        margin: auto;
-       background: #F3E4E1;
+       background-color: #F3E4E1;
+       background-image: url("../assets/graphics/graphics-header.svg"), url("../assets/graphics/graphics-footer.svg");
+       background-position: top, bottom;
+       background-repeat: no-repeat, no-repeat;
    }
 
    .title {
+       margin-top: 20%;
+       margin-left: 10%;
+       margin-bottom: auto;
        font-size: 42px;
+       font-weight: bold;
+       font-family: "PT Serif";
+       color: #2F2926;
    }
 
    .paragraph {
        font-size: 14px;
-       width: 311px;
-       height: 60px;
+       font-family: "Work Sans";
+       margin-left: 10%;
+       margin-right: 10%;
+       color: #2F2926;
    }
 
    #bold {
@@ -88,15 +104,27 @@ export default {
 
    .eva-img {
        border-radius: 50px;
-       margin-top: 270px;
-       margin-left: 40%;
+       margin-top: 5%;
+       margin-left: 38%;
    }
 
-   .name {
-       margin-left: 35%;
+   .eva-name {
+       margin-left: 33%;
+       margin-top: auto;
+       margin-bottom: auto;
+       color: #2F2926;
+       font-size: 22px;
+       font-weight: bold;
+       font-family: "PT Serif";
    }
 
    .eva-info {
-       margin-left: 43%;
+       margin-top: auto;
+       margin-left: 41%;
+       margin-bottom: 30%;
+       color: #2F2926;
+       font-family: "Work Sans";
+       font-size: 10px;
+       font-weight: lighter;
    }
 </style>
