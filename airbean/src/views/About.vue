@@ -1,6 +1,6 @@
 <template>
     <article id='about'>
-            <MenuButton v-on:click="setOverlay" />
+        <NavMenu class="menu"/>
         <section>
             <h1 class="title">Vårt kaffe</h1>
             <p id="bold" class="paragraph">
@@ -53,23 +53,19 @@
 </template>
 
 <script>
-import MenuButton from '../components/MenuButton'
+import NavMenu from '../components/NavMenu'
 
 export default {
   name: 'About',
   components: {
-    MenuButton
-  },
-  methods: {
-    setOverlay () {
-
-    }
+    NavMenu
   }
 }
 </script>
 
 <style scoped>
     #about {
+       position: relative;
        border: 1px solid black;
        width: 375px;
        height: auto;
@@ -80,8 +76,26 @@ export default {
        background-repeat: no-repeat, no-repeat;
    }
 
+   #overlay {
+       position: fixed;
+       display: none;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background-color: rgba(0, 0, 0, 0.5);
+       z-index: 2;
+       cursor: pointer;
+   }
+
+   .menu {
+       position: absolute;
+   }
+
    .title {
-       margin-top: 20%;
+       margin-top: 40%;
        margin-left: 10%;
        margin-bottom: auto;
        font-size: 42px;
