@@ -1,16 +1,37 @@
 <template>
   <div class="wrapper">
-    <nav></nav>
+    <nav>
+      <button href="#">Menu</button>
+      <button @click="openCart" href="#">Menu</button>
+    </nav>
     <h1>Meny</h1>
     <MenuList />
+    <cart-overlay @closeCart="closeCartOverlay" v-if="showCartOverlay" />
+    <img src="../assets/graphics/graphics-footer.svg" alt="" />
   </div>
 </template>
 
 <script>
 import MenuList from '../components/MenuList.vue'
+import CartOverlay from '../components/Cart.vue'
 export default {
+  data: () => {
+    return {
+      showCartOverlay: false
+    }
+  },
   components: {
-    MenuList
+    MenuList,
+    CartOverlay
+  },
+  methods: {
+    openCart: function() {
+      this.showCartOverlay = true
+    },
+    closeCartOverlay: function() {
+      this.showCartOverlay = false
+      console.log('asdasasdasdasd')
+    }
   }
 }
 </script>
@@ -27,7 +48,13 @@ export default {
 
   nav {
     width: 100vw;
-    height: 6rem;
+    min-height: 6rem;
+    background-image: url('../assets/graphics/graphics-header.svg');
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.6rem 0rem 1.6rem;
   }
 
   h1 {
