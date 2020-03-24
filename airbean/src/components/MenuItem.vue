@@ -1,6 +1,6 @@
 <template>
   <section class="menuItem">
-    <button class="addBtn">+</button>
+    <button class="addBtn" @click="sendProd(prod)">+</button>
     <article>
       <p>
         <b>{{ prod.title }}</b
@@ -17,6 +17,13 @@ export default {
   name: 'MenuItem',
   props: {
     prod: Object
+  },
+  methods: {
+    sendProd(prod) {
+      console.log('cart')
+      this.$store.dispatch('sendProdToCart', prod)
+      console.log(this.$store.state.cart.cart)
+    }
   }
 }
 </script>
