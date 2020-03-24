@@ -1,6 +1,9 @@
 <template>
     <article id='about'>
-        <NavMenu class="menu"/>
+        <nav class="main-nav">
+            <HamburgerIcon />
+        </nav>
+        <OverlayMenu />
         <section>
             <h1 class="title">Vårt kaffe</h1>
             <p id="bold" class="paragraph">
@@ -53,17 +56,26 @@
 </template>
 
 <script>
-import NavMenu from '../components/NavMenu'
+import HamburgerIcon from '../components/HamburgerIcon'
+import OverlayMenu from '../components/OverlayMenu'
 
 export default {
   name: 'About',
   components: {
-    NavMenu
+    HamburgerIcon,
+    OverlayMenu
   }
 }
 </script>
 
 <style scoped>
+    .main-nav {
+        /* position: absolute; */
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0.8rem;
+    }
+
     #about {
        position: relative;
        border: 1px solid black;
@@ -76,26 +88,8 @@ export default {
        background-repeat: no-repeat, no-repeat;
    }
 
-   #overlay {
-       position: fixed;
-       display: none;
-       width: 100%;
-       height: 100%;
-       top: 0;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       background-color: rgba(0, 0, 0, 0.5);
-       z-index: 2;
-       cursor: pointer;
-   }
-
-   .menu {
-       position: absolute;
-   }
-
    .title {
-       margin-top: 40%;
+       margin-top: 20%;
        margin-left: 10%;
        margin-bottom: auto;
        font-size: 42px;
