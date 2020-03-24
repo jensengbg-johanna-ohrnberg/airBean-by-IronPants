@@ -11,11 +11,11 @@
         class="corner"
       />
       <h1>Din beställning</h1>
-      <CartList />
+      <CartList @valChange="getTotal" />
       <section class="total">
         <article>
           <h2>Total</h2>
-          <h2>{{ total }} kr</h2>
+          <h2>{{ totalP }} kr</h2>
         </article>
         <p>inkl moms + drönarleverans</p>
       </section>
@@ -34,16 +34,22 @@ export default {
   methods: {
     clsoeCart: function() {
       this.$emit('closeCart')
-    }
-  },
-  computed: {
-    total() {
+    },
+    getTotal: function() {
       let price = 0
       this.$store.state.cart.cart.forEach(item => {
-        price += item.price
+        price += item.price * item.quant
       })
-      return price
+      this.totalP = price
     }
+  },
+  data: () => {
+    return {
+      totalP: 0
+    }
+  },
+  created() {
+    this.getTotal()
   }
 }
 </script>
@@ -59,6 +65,7 @@ export default {
 .wrapper-cart {
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
   position: fixed;
   @include flex();
   justify-content: flex-start;
@@ -77,7 +84,8 @@ export default {
   .container {
     background: #fff;
     width: 92%;
-    height: 90%;
+    min-height: 90%;
+    overflow: scroll;
     margin: 1rem;
     @include flex();
     border-radius: 4px;
