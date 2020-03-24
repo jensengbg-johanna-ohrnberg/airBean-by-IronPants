@@ -20,9 +20,8 @@ export default {
   },
   methods: {
     sendProd(prod) {
-      console.log('cart')
+      prod.quant = 1
       this.$store.dispatch('sendProdToCart', prod)
-      console.log(this.$store.state.cart.cart)
     }
   }
 }
