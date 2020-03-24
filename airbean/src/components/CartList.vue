@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="prod in cartItems" :key="prod.id">
-      <CartItem v-bind:prod="prod" />
+      <CartItem v-bind:prod="prod" @valChange="valChange" />
     </li>
   </ul>
 </template>
@@ -16,6 +16,11 @@ export default {
   computed: {
     cartItems() {
       return this.$store.state.cart.cart
+    }
+  },
+  methods: {
+    valChange: function() {
+      this.$emit('valChange')
     }
   }
 }
