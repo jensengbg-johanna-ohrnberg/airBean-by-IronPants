@@ -30,7 +30,6 @@ export default {
     },
     closeCartOverlay: function() {
       this.showCartOverlay = false
-      console.log('asdasasdasdasd')
     }
   }
 }
