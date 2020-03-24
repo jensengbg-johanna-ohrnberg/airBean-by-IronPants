@@ -7,7 +7,7 @@
     <article>
       <button class="arrow up"></button>
       <input type="number" min="1" max="5" value="1" class="quant" />
-      <button class="arrow up"></button>
+      <button class="arrow down"></button>
     </article>
   </section>
 </template>
