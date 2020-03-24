@@ -3,7 +3,7 @@
         <nav class="main-nav">
             <HamburgerIcon />
         </nav>
-        <OverlayMenu />
+        <OverlayMenu class="overlay-menu"/>
         <section>
             <h1 class="title">Vårt kaffe</h1>
             <p id="bold" class="paragraph">
@@ -74,6 +74,10 @@ export default {
         display: flex;
         justify-content: space-between;
         padding: 0.5rem 0.8rem;
+    }
+
+    .overlay-menu {
+        position: absolute;
     }
 
     #about {
