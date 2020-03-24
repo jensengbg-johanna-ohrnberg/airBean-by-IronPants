@@ -4,10 +4,20 @@
       <h3>{{ prod.title }}</h3>
       <p class="price">{{ prod.price }} kr</p>
     </article>
-    <article>
-      <button class="arrow up"></button>
-      <input type="number" min="1" max="5" value="1" class="quant" />
-      <button class="arrow down"></button>
+    <article class="quant">
+      <img
+        class="arrow"
+        src="../assets/graphics/arrow-up.svg"
+        alt=""
+        @click="increaseQuant(prod)"
+      />
+      <p class="quantVal">{{ amount }}</p>
+      <img
+        class="arrow"
+        src="../assets/graphics/arrow-down.svg"
+        alt=""
+        @click="decreaseQuant(prod)"
+      />
     </article>
   </section>
 </template>
@@ -17,6 +27,29 @@ export default {
   name: 'CartItem',
   props: {
     prod: Object
+  },
+  data: function() {
+    return {
+      amount: this.prod.quant
+    }
+  },
+  methods: {
+    increaseQuant: function(prod) {
+      this.$store.dispatch('increaseQuant', prod)
+      const index = this.$store.state.cart.cart.indexOf(prod)
+      this.amount = this.$store.state.cart.cart[index].quant
+      this.$emit('valChange')
+    },
+    decreaseQuant: function(prod) {
+      this.$store.dispatch('decreaseQuant', prod)
+      const index = this.$store.state.cart.cart.indexOf(prod)
+      if (index === -1) {
+        this.amount = 0
+      } else {
+        this.amount = this.$store.state.cart.cart[index].quant
+      }
+      this.$emit('valChange')
+    }
   }
 }
 </script>
@@ -27,22 +60,31 @@ export default {
   justify-content: flex-end;
   align-items: flex-start;
   padding: 1rem;
-  margin: 0.6rem 0rem;
-  .prodInfo {
-    height: 100%;
-    margin-right: auto;
-  }
-  input[type='number'] {
-    border: none;
-    text-align: center;
-    align-self: center;
-    padding: 0rem 0rem 0.8rem 0rem;
+
+  .quant {
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    background: red;
-    padding: 1rem;
+  .prodInfo {
+    padding-top: 1rem;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .quantVal {
+    margin: 0.2rem 0rem;
+  }
+
+  .arrow {
+    cursor: pointer;
+    padding: 0.4rem;
   }
 
   .price {
