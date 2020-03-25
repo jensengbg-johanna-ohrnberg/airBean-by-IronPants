@@ -1,15 +1,9 @@
 <template>
   <div class="wrapper-cart">
     <nav>
-      <button href="#"></button>
-      <button @click="clsoeCart" href="#">Menu</button>
+      <CartBtn @clicked="clsoeCart" />
     </nav>
     <div class="container">
-      <img
-        src="../assets/graphics/cart-upper-corner.svg"
-        alt=""
-        class="corner"
-      />
       <h1>Din beställning</h1>
       <CartList @valChange="getTotal" />
       <section class="total">
@@ -26,10 +20,12 @@
 
 <script>
 import CartList from './CartList.vue'
+import CartBtn from './CartBtn.vue'
 export default {
   name: 'CartOverlay',
   components: {
-    CartList
+    CartList,
+    CartBtn
   },
   methods: {
     clsoeCart: function() {
@@ -49,7 +45,6 @@ export default {
         totalSum: total
       }
       this.$store.dispatch('sendOrder', order)
-      console.log(this.$store.state.order.orderToSend)
       this.$router.push('/status')
     }
   },
@@ -75,19 +70,20 @@ export default {
 .wrapper-cart {
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
   @include flex();
   justify-content: flex-start;
   top: 0;
   right: 0;
   background: #000d;
+  padding-top: 1rem;
 
   nav {
     width: 100vw;
     height: 6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1rem 1.6rem 0rem 1.6rem;
   }
@@ -100,12 +96,6 @@ export default {
     @include flex();
     border-radius: 4px;
     padding: 1rem 0rem;
-
-    .corner {
-      transform: translateY(-1.8rem);
-      align-self: flex-end;
-      margin-right: 1rem;
-    }
 
     .total {
       width: 100%;
