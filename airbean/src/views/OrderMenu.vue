@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
     <nav>
-      <button href="#">Menu</button>
-      <button @click="openCart" href="#">Menu</button>
+      <CartBtn @clicked="openCart" />
     </nav>
     <h1>Meny</h1>
     <MenuList />
@@ -14,6 +13,7 @@
 <script>
 import MenuList from '../components/MenuList.vue'
 import CartOverlay from '../components/Cart.vue'
+import CartBtn from '../components/CartBtn.vue'
 export default {
   data: () => {
     return {
@@ -22,7 +22,8 @@ export default {
   },
   components: {
     MenuList,
-    CartOverlay
+    CartOverlay,
+    CartBtn
   },
   methods: {
     openCart: function() {
@@ -38,7 +39,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -51,8 +52,8 @@ export default {
     background-image: url('../assets/graphics/graphics-header.svg');
     background-size: cover;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     padding: 1rem 1.6rem 0rem 1.6rem;
   }
 
