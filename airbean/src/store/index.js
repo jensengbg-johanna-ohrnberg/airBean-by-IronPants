@@ -15,14 +15,11 @@ export const mutations = {
 
 export default new Vuex.Store({
   state: {
-    isNavOpen: false
+
   },
   mutations: {
   },
   actions: {
-    toggleNav (ctx) {
-      ctx.state.isNavOpen = true
-    }
   },
   modules: {
   }
