@@ -1,11 +1,15 @@
 <template>
     <article id='about'>
+
         <nav class="main-nav">
-            <HamburgerIcon />
+            <MenuButton />
         </nav>
+
         <OverlayMenu class="overlay-menu"/>
+
         <section>
             <h1 class="title">Vårt kaffe</h1>
+
             <p id="bold" class="paragraph">
                 Pumpkin spice mug,
                 barista cup, sit macchiato,
@@ -15,6 +19,7 @@
                 variety extra iced id lungo half and half mazagran.
                 Pumpkin spice.
             </p>
+
             <p class="paragraph">
                 Que dark fair trade,
                 spoon decaffeinated,
@@ -47,22 +52,24 @@
                 milk aromatic turkish skinny crema.
             </p>
         </section>
+
         <section>
             <img class="eva-img" src="../assets/graphics/eva-cortado.jpg" alt="eva-cortado">
             <h2 class="eva-name">Eva Cortado</h2>
             <h6 class="eva-info">VD & Grundare</h6>
         </section>
+
     </article>
 </template>
 
 <script>
-import HamburgerIcon from '../components/HamburgerIcon'
+import MenuButton from '../components/MenuButton'
 import OverlayMenu from '../components/OverlayMenu'
 
 export default {
   name: 'About',
   components: {
-    HamburgerIcon,
+    MenuButton,
     OverlayMenu
   }
 }
@@ -70,7 +77,7 @@ export default {
 
 <style scoped>
     .main-nav {
-        /* position: absolute; */
+        position: absolute;
         display: flex;
         justify-content: space-between;
         padding: 0.5rem 0.8rem;
@@ -93,7 +100,7 @@ export default {
    }
 
    .title {
-       margin-top: 20%;
+       margin-top: 40%;
        margin-left: 10%;
        margin-bottom: auto;
        font-size: 42px;
