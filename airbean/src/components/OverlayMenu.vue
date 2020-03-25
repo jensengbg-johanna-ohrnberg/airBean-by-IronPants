@@ -16,7 +16,7 @@
               <span><hr class="line"></span>
               <li><a @click="navToAbout">Vårt kaffe</a></li>
               <span><hr class="line"></span>
-              <li><a @click="navToMyProfile">Min Profil</a></li>
+              <li><a @click="navToSignIn">Min Profil</a></li>
               <span><hr class="line"></span>
               <li><a @click="navToOrderstatus">Orderstatus</a></li>
             </ul>
@@ -42,11 +42,14 @@ export default {
     navToAbout () {
       this.$router.push('/about')
     },
-    navToMyProfile () {
-      this.$router.push('/about')
+    navToSignIn () {
+      this.$router.push('/signin')
     },
     navToOrderstatus () {
       this.$router.push('/orderstatus')
+    },
+    closeMenu: function () {
+      this.$emit('closeMenu')
     },
     closeOverlay: mutations.toggleNav
   }

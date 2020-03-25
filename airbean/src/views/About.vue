@@ -5,7 +5,7 @@
             <MenuButton />
         </nav>
 
-        <OverlayMenu class="overlay-menu"/>
+        <OverlayMenu class="overlay-menu" />
 
         <section>
             <h1 class="title">Vårt kaffe</h1>

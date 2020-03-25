@@ -3,9 +3,9 @@
       :class="{ 'active' : isBurgerMenuActive }"
       @click.prevent="toggle">
 
-        <button type="button" class="burger-button" title="Menu">
-          <img src="../assets/graphics/navicon.svg" alt="navicon">
-        </button>
+      <button type="button" class="burger-button" title="Menu" >
+        <img src="../assets/graphics/navicon.svg" alt="navicon">
+      </button>
 
   </div>
 </template>
