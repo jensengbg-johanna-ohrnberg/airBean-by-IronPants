@@ -19,7 +19,7 @@
         </article>
         <p>inkl moms + drönarleverans</p>
       </section>
-      <button class="btn">Take my money!</button>
+      <button class="btn" @click="sendOrder">Take my money!</button>
     </div>
   </div>
 </template>
@@ -41,6 +41,16 @@ export default {
         price += item.price * item.quant
       })
       this.totalP = price
+    },
+    sendOrder: function() {
+      const total = this.totalP
+      const order = {
+        items: this.$store.state.cart.cart,
+        totalSum: total
+      }
+      this.$store.dispatch('sendOrder', order)
+      console.log(this.$store.state.order.orderToSend)
+      this.$router.push('/status')
     }
   },
   data: () => {
@@ -108,16 +118,6 @@ export default {
         display: flex;
         justify-content: space-between;
       }
-    }
-
-    .btn {
-      background: #000;
-      padding: 0.6rem 1.8rem;
-      margin: 1rem 0rem;
-      color: #fff;
-      border: none;
-      border-radius: 3rem;
-      font-size: 1.3rem;
     }
   }
 }
