@@ -8,7 +8,7 @@
     <p class="eta">
       <strong>{{ eta }}</strong> minuter
     </p>
-    <button class="btn">Ok, coo!</button>
+    <button class="btn" @click="conferm">Ok, coo!</button>
   </div>
 </template>
 
@@ -20,6 +20,17 @@ export default {
     },
     eta() {
       return this.$store.state.order.orderToSend.eta
+    }
+  },
+  methods: {
+    conferm: function() {
+      const localUuid = window.localStorage.getItem('uuid')
+      console.log(localUuid)
+      if (localUuid === null) {
+        this.$router.push('/createProfile')
+      } else {
+        this.$router.push('/orderHistory')
+      }
     }
   }
 }
