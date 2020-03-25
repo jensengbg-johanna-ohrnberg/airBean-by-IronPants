@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Menu from '../views/OrderMenu.vue'
-import orderStatus from '../views/Status.vue'
+import OrderStatus from '../views/Status.vue'
+import Profile from '../views/Profile.vue'
+import OrderHistory from '../views/OrderHistory.vue'
 
 Vue.use(VueRouter)
 
@@ -26,7 +28,17 @@ const routes = [
   {
     path: '/status',
     name: 'Order status',
-    component: orderStatus
+    component: OrderStatus
+  },
+  {
+    path: '/createProfile',
+    name: 'Create profile',
+    component: Profile
+  },
+  {
+    path: '/orderHistory',
+    name: 'Order history',
+    component: OrderHistory
   }
 ]
 
