@@ -1,31 +1,31 @@
 <template>
-  <article>
-    <section>
-      <transition name="slide">
-        <div v-if="isOverlayOpen" class="show-overlay">
-          <div class="close-overlay" @click="closeOverlay" v-if="isOverlayOpen">
-            <button type="button" class="close-button" title="Menu">
-              <img
-                class="img-button"
-                src="../assets/graphics/close.svg"
-                alt="close"
-              />
-            </button>
-          </div>
+  <transition name="slide">
+    <div v-if="isOverlayOpen" class="show-overlay">
+      <button
+        type="button"
+        class="close-button"
+        title="Menu"
+        @click="closeOverlay"
+        v-if="isOverlayOpen"
+      >
+        <img
+          class="img-button"
+          src="../assets/graphics/close.svg"
+          alt="close"
+        />
+      </button>
 
-          <ul class="show-overlay-nav">
-            <li><a @click="navToMenu">Meny</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToAbout">Vårt kaffe</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToMyProfile">Min Profil</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToOrderstatus">Orderstatus</a></li>
-          </ul>
-        </div>
-      </transition>
-    </section>
-  </article>
+      <ul class="show-overlay-nav">
+        <li><a @click="navToMenu">Meny</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToAbout">Vårt kaffe</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToMyProfile">Min Profil</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToOrderstatus">Orderstatus</a></li>
+      </ul>
+    </div>
+  </transition>
 </template>
 <script>
 import { store, mutations } from '../store/index'
@@ -39,34 +39,39 @@ export default {
   methods: {
     navToMenu() {
       this.$router.push('/menu')
+      mutations.toggleNav()
     },
     navToAbout() {
       this.$router.push('/about')
+      mutations.toggleNav()
     },
     navToMyProfile() {
       this.$router.push('/profile')
+      mutations.toggleNav()
     },
     navToOrderstatus() {
       this.$router.push('/orderstatus')
+      mutations.toggleNav()
     },
     closeOverlay: mutations.toggleNav
   }
 }
 </script>
 
-<style>
+<style scoped>
+section {
+  width: 100vw;
+  height: 100vh;
+}
 .close-button {
   position: sticky;
-  height: 50px;
-  width: 50px;
-  display: block;
-  z-index: 999;
+  padding: 1.2rem;
+  margin: -0.6rem 0rem 0rem 1rem;
   border: 0;
   border-radius: 0;
   background-color: #ffffff;
   pointer-events: all;
   border-radius: 50%;
-  margin-top: -30px;
 }
 
 .img-button {
@@ -75,7 +80,6 @@ export default {
   justify-content: center;
   width: 25px;
   height: 25px;
-  margin-left: 6px;
 }
 
 .slide-enter,
@@ -90,20 +94,18 @@ export default {
 }
 
 .show-overlay {
-  overflow: hidden;
   background-color: #2f2926;
-  position: sticky;
-  height: 828px;
-  z-index: 999;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
   padding: 3rem 20px 2rem 10px;
-  width: 345px;
 }
 
 .show-overlay-nav {
   list-style-type: none;
   cursor: pointer;
-  margin-top: 50%;
-  margin-bottom: 50%;
+  margin: 6rem 0rem;
 }
 
 .show-overlay-nav > li > a {
