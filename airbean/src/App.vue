@@ -18,6 +18,17 @@ export default {}
   font-family: 'PT Serif', serif;
 }
 
+nav {
+  width: 100vw;
+  min-height: 6rem;
+  background-image: url('./assets/graphics/graphics-header.svg');
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem 1.6rem 0rem 1.6rem;
+}
+
 p {
   font-family: 'Work Sans', sans-serif;
   font-size: 0.8rem;
