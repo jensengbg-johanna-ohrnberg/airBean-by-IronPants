@@ -46,17 +46,6 @@ export default {
   align-items: center;
   background: #f3e4e1;
 
-  nav {
-    width: 100vw;
-    min-height: 6rem;
-    background-image: url('../assets/graphics/graphics-header.svg');
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 1rem 1.6rem 0rem 1.6rem;
-  }
-
   h1 {
     margin: 1.4rem 0rem;
     font-size: 2.6rem;
