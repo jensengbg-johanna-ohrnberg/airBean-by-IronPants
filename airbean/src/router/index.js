@@ -36,7 +36,7 @@ const routes = [
     component: Profile
   },
   {
-    path: '/orderHistory',
+    path: '/orderstatus',
     name: 'Order history',
     component: OrderHistory
   }
