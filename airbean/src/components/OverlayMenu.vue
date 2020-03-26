@@ -2,23 +2,19 @@
   <article>
     <section class="show-overlay">
 
-            <div @click="closeMenu" class="close-button">
-              <img
-                class="img-button"
-                src="../assets/graphics/close.svg"
-                alt="close"
-              />
-            </div>
+      <div @click="closeNav" class="close-button">
+        <img src="../assets/graphics/close.svg" alt="close" />
+      </div>
 
-          <ul class="show-overlay-nav">
-            <li><a @click="navToMenu">Meny</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToAbout">Vårt kaffe</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToMyProfile">Min Profil</a></li>
-            <span><hr class="line"/></span>
-            <li><a @click="navToOrderstatus">Orderstatus</a></li>
-          </ul>
+      <ul class="navigation-menu">
+        <li><a @click="navToMenu">Meny</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToAbout">Vårt kaffe</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToMyProfile">Min Profil</a></li>
+        <span><hr class="line"/></span>
+        <li><a @click="navToOrderstatus">Orderstatus</a></li>
+      </ul>
     </section>
   </article>
 </template>
@@ -26,9 +22,14 @@
 <script>
 
 export default {
+  data () {
+    return {
+      isNavOpen: false
+    }
+  },
   methods: {
-    closeMenu () {
-      this.$emit('closeMenu')
+    closeNav () {
+      this.isNavOpen = !this.isNavOpen
     },
     navToMenu() {
       this.$router.push('/menu')
@@ -42,21 +43,63 @@ export default {
     navToOrderstatus() {
       this.$router.push('/status')
     }
+  },
+  watch: {
+    isNavOpen () {
+      this.$store.commit('toggleNav', this.isNavOpen)
+    }
   }
 }
 </script>
 
 <style>
+.show-overlay {
+  position: absolute;
+  background-color: #2F2926;
+  width: 100%;
+  height: 100%;
+  margin-left: -5%;
+  margin-top: -5%;
+}
+
+.navigation-menu {
+  list-style-type: none;
+  margin-top: 60%;
+}
+
+.navigation-menu > li > a {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 32px;
+  color: #FFFFFF;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.line {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 50%;
+}
+
 .close-button {
+  width: 13%;
+  height: 6%;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 15px;
+  margin-left: 5%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+/* .close-button {
   position: relative;
   height: 50px;
   width: 50px;
   display: block;
-  z-index: 999;
-  border: 0;
   border-radius: 0;
   background-color: #ffffff;
-  pointer-events: all;
   border-radius: 50%;
   margin-top: -30px;
   cursor: pointer;
@@ -76,7 +119,6 @@ export default {
   overflow: hidden;
   background-color: #2f2926;
   height: 135vh;
-  z-index: 999;
   padding: 3rem 20px 2rem 10px;
   width: 60.2vh;
 }
@@ -107,5 +149,5 @@ hr {
 hr.line {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.2);
-}
+} */
 </style>
