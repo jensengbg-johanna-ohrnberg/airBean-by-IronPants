@@ -39,7 +39,7 @@ button {
 #burger {
   background-color: #ffffff;
   border-radius: 50%;
-  padding: 1.4rem 1.3rem;
+  padding: 1.1rem 0.8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
