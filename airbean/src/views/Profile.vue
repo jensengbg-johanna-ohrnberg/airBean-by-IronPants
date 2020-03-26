@@ -1,6 +1,6 @@
 <template>
   <div class="profileContainer">
-    <h2>Create your profile</h2>
+    <nav></nav>
   </div>
 </template>
 
