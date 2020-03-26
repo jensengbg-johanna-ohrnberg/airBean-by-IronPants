@@ -1,13 +1,13 @@
 <template>
   <ul>
     <li v-for="product in products" :key="product.id">
-      <menu-items v-bind:prod="product" />
+      <MenuItems v-bind:prod="product" />
     </li>
   </ul>
 </template>
 
 <script>
-import MenuItems from './MenuItem.vue'
+import MenuItems from '../components/MenuItem'
 export default {
   name: 'MenuList',
   components: {

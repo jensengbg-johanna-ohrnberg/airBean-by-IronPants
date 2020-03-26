@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-cart">
     <nav>
-      <CartBtn @clicked="clsoeCart" />
+      <CartBtn @clicked="closeCart" />
     </nav>
     <div class="container">
       <h1>Din beställning</h1>
@@ -28,7 +28,7 @@ export default {
     CartBtn
   },
   methods: {
-    clsoeCart: function() {
+    closeCart: function() {
       this.$emit('closeCart')
     },
     getTotal: function() {

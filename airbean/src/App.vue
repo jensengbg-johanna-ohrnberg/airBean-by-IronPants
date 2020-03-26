@@ -18,6 +18,14 @@ export default {}
   font-family: 'PT Serif', serif;
 }
 
+#app {
+  width: 30%;
+  height: auto;
+  margin: 35%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 p {
   font-family: 'Work Sans', sans-serif;
   font-size: 0.8rem;

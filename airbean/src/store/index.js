@@ -6,21 +6,14 @@ import order from './modules/order.js'
 
 Vue.use(Vuex)
 
-export const store = Vue.observable({
-  isNavOpen: false
-})
-
-export const mutations = {
-  toggleNav () {
-    store.isNavOpen = !store.isNavOpen
-  }
-}
-
 export default new Vuex.Store({
   state: {
-
+    isNavOpen: false
   },
   mutations: {
+    toggleNav (state, toggle) {
+      state.isNavOpen = toggle
+    }
   },
   actions: {
   },

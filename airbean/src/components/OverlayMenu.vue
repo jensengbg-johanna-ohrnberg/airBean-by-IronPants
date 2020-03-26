@@ -1,17 +1,14 @@
 <template>
   <article>
-    <section>
-      <transition name="slide">
-        <div v-if="isOverlayOpen" class="show-overlay">
-          <div class="close-overlay" @click="closeOverlay" v-if="isOverlayOpen">
-            <button type="button" class="close-button" title="Menu">
+    <section class="show-overlay">
+
+            <div @click="closeMenu" class="close-button">
               <img
                 class="img-button"
                 src="../assets/graphics/close.svg"
                 alt="close"
               />
-            </button>
-          </div>
+            </div>
 
           <ul class="show-overlay-nav">
             <li><a @click="navToMenu">Meny</a></li>
@@ -22,21 +19,17 @@
             <span><hr class="line"/></span>
             <li><a @click="navToOrderstatus">Orderstatus</a></li>
           </ul>
-        </div>
-      </transition>
     </section>
   </article>
 </template>
+
 <script>
-import { store, mutations } from '../store/index'
 
 export default {
-  computed: {
-    isOverlayOpen() {
-      return store.isNavOpen
-    }
-  },
   methods: {
+    closeMenu () {
+      this.$emit('closeMenu')
+    },
     navToMenu() {
       this.$router.push('/menu')
     },
@@ -44,19 +37,18 @@ export default {
       this.$router.push('/about')
     },
     navToMyProfile() {
-      this.$router.push('/profile')
+      this.$router.push('/createProfile')
     },
     navToOrderstatus() {
-      this.$router.push('/orderstatus')
-    },
-    closeOverlay: mutations.toggleNav
+      this.$router.push('/status')
+    }
   }
 }
 </script>
 
 <style>
 .close-button {
-  position: sticky;
+  position: relative;
   height: 50px;
   width: 50px;
   display: block;
@@ -67,42 +59,31 @@ export default {
   pointer-events: all;
   border-radius: 50%;
   margin-top: -30px;
+  cursor: pointer;
 }
 
 .img-button {
-  position: sticky;
+  position: absolute;
   display: flex;
   justify-content: center;
   width: 25px;
   height: 25px;
-  margin-left: 6px;
-}
-
-.slide-enter,
-.slide-leave-to {
-  transition: all 200ms ease-in-out 0s;
-}
-
-.close-overlay {
-  background-color: #2f2926;
-  position: sticky;
-  cursor: pointer;
+  margin-left: 25%;
+  margin-top: 25%;
 }
 
 .show-overlay {
   overflow: hidden;
   background-color: #2f2926;
-  position: sticky;
-  height: 828px;
+  height: 135vh;
   z-index: 999;
   padding: 3rem 20px 2rem 10px;
-  width: 345px;
+  width: 60.2vh;
 }
 
 .show-overlay-nav {
   list-style-type: none;
-  cursor: pointer;
-  margin-top: 50%;
+  margin-top: 40%;
   margin-bottom: 50%;
 }
 
@@ -115,6 +96,7 @@ export default {
   padding-bottom: 0.5em;
   margin-top: 40px;
   margin-bottom: 40px;
+  cursor: pointer;
 }
 
 hr {
