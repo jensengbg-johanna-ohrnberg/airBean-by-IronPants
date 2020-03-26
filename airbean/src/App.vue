@@ -20,7 +20,7 @@ export default {}
 
 nav {
   width: 100vw;
-  min-height: 6rem;
+  min-height: 6.8rem;
   background-image: url('./assets/graphics/graphics-header.svg');
   background-size: cover;
   display: flex;
@@ -36,12 +36,12 @@ p {
 
 .btn {
   background: #000;
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2.4rem;
   margin: 1rem 0rem;
   color: #fff;
   border: none;
   border-radius: 3rem;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: bolder;
 }
 </style>
