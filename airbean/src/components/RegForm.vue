@@ -7,20 +7,36 @@
     </p>
     <form>
       <label for="name"><p>Namn</p></label>
-      <input type="text" placeholder="Your full name here" />
+      <input type="text" placeholder="Your full name here" v-model="userName" />
       <label for="name"><p>Epost</p></label>
-      <input type="email" placeholder="Your email address here" />
+      <input
+        type="email"
+        placeholder="Your email address here"
+        v-model="userEmail"
+      />
       <article>
         <input type="checkbox" />
         <p>GDPR Ok!</p>
       </article>
     </form>
-    <button class="btn">Brew me a cup!</button>
+    <button class="btn" @click="createProfile">Brew me a cup!</button>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => {
+    return {
+      userName: '',
+      userEmail: ''
+    }
+  },
+  methods: {
+    createProfile: function() {
+      this.$emit('clicked', this.userName, this.userEmail)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
