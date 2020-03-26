@@ -31,7 +31,7 @@ const routes = [
     component: OrderStatus
   },
   {
-    path: '/createProfile',
+    path: '/profile',
     name: 'Create profile',
     component: Profile
   },
