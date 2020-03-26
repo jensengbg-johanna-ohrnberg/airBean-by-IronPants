@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
     <nav>
+      <MenuBtn />
       <CartBtn @clicked="openCart" />
     </nav>
+    <OverlayMenu class="overlay-menu" />
     <h1>Meny</h1>
     <MenuList />
     <cart-overlay @closeCart="closeCartOverlay" v-if="showCartOverlay" />
@@ -14,6 +16,8 @@
 import MenuList from '../components/MenuList.vue'
 import CartOverlay from '../components/Cart.vue'
 import CartBtn from '../components/CartBtn.vue'
+import MenuBtn from '../components/MenuButton.vue'
+import OverlayMenu from '../components/OverlayMenu'
 export default {
   data: () => {
     return {
@@ -23,7 +27,9 @@ export default {
   components: {
     MenuList,
     CartOverlay,
-    CartBtn
+    CartBtn,
+    MenuBtn,
+    OverlayMenu
   },
   methods: {
     openCart: function() {
