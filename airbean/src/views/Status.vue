@@ -27,7 +27,7 @@ export default {
       const localUuid = window.localStorage.getItem('uuid')
       console.log(localUuid)
       if (localUuid === null) {
-        this.$router.push('/createProfile')
+        this.$router.push('/profile')
       } else {
         this.$router.push('/orderHistory')
       }
