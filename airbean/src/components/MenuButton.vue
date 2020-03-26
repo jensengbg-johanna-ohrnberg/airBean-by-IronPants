@@ -1,57 +1,41 @@
 <template>
-  <div id="burger"
-      :class="{ 'active' : isBurgerMenuActive }"
-      @click.prevent="toggle">
+  <div id="burger">
 
-        <button type="button" class="burger-button" title="Menu">
+        <div class="burger-button" @click="openNav">
           <img src="../assets/graphics/navicon.svg" alt="navicon">
-        </button>
+        </div>
 
   </div>
 </template>
 <script>
-import { store, mutations } from '../store/index'
 
 export default {
-  computed: {
-    isBurgerMenuActive () {
-      return store.isNavOpen
+  data () {
+    return {
+      isNavOpen: false
     }
   },
   methods: {
-    toggle () {
-      mutations.toggleNav()
+    openNav () {
+      this.isNavOpen = !this.isNavOpen
+    }
+  },
+  watch: {
+    isNavOpen () {
+      this.$store.commit('toggleNav', this.isNavOpen)
     }
   }
 }
 </script>
 
 <style>
-  .hidden {
-    visibility: hidden;
-  }
-
-  button {
-    cursor: pointer;
-    margin-top: 12px;
-    margin-left: 6px;
-  }
-
-  button:focus {
-    outline: 0;
-  }
-
   .burger-button {
-    position: relative;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 18%;
     height: 30px;
     width: 32px;
-    display: block;
-    z-index: 999;
-    border: 0;
-    border-radius: 0;
-    background-color: transparent;
-    pointer-events: all;
-    transition: transform .6s cubic-bezier(.165,.84,.44,1);
   }
 
   #burger {

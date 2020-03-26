@@ -1,12 +1,18 @@
 <template>
   <div class="wrapper">
-    <nav>
+
+    <nav class="main-nav">
+      <MenuButton />
+    </nav>
+
+    <OverlayMenu class="overlay-menu"/>
+
+    <nav class="cart-nav">
       <CartBtn @clicked="openCart" />
     </nav>
     <h1>Meny</h1>
     <MenuList />
     <cart-overlay @closeCart="closeCartOverlay" v-if="showCartOverlay" />
-    <img src="../assets/graphics/graphics-footer.svg" alt="" />
   </div>
 </template>
 
@@ -14,6 +20,9 @@
 import MenuList from '../components/MenuList.vue'
 import CartOverlay from '../components/Cart.vue'
 import CartBtn from '../components/CartBtn.vue'
+import MenuButton from '../components/MenuButton'
+import OverlayMenu from '../components/OverlayMenu'
+
 export default {
   data: () => {
     return {
@@ -23,7 +32,9 @@ export default {
   components: {
     MenuList,
     CartOverlay,
-    CartBtn
+    CartBtn,
+    MenuButton,
+    OverlayMenu
   },
   methods: {
     openCart: function() {
@@ -38,28 +49,40 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: #f3e4e1;
+  background: #f3e4e1; */
+  position: relative;
+  border: 1px solid black;
+  background-color: #F3E4E1;
+  background-image: url('../assets/graphics/graphics-header.svg'), url("../assets/graphics/graphics-footer.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  background-size: 100%, 100%;
+}
 
-  nav {
-    width: 100vw;
-    min-height: 6rem;
-    background-image: url('../assets/graphics/graphics-header.svg');
-    background-size: cover;
+  .cart-nav {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
     padding: 1rem 1.6rem 0rem 1.6rem;
   }
 
   h1 {
+    display: flex;
+    justify-content: center;
     margin: 1.4rem 0rem;
     font-size: 2.6rem;
   }
+
+.main-nav {
+  position: absolute;
+  display: flex;
+  padding: 0.5rem 0.8rem;
+}
+
+.overlay-menu {
+  position: absolute;
 }
 </style>

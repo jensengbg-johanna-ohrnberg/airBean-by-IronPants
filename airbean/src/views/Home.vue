@@ -15,10 +15,7 @@ export default {
 
 <style scoped>
   #home {
-    border: 1px solid black;
-    width: 375px;
-    height: 660px;
-    margin: auto;
+    position: relative;
     background-color: #38846D;
     background-image: url("../assets/graphics/intro-graphic-left.svg"), url("../assets/graphics/intro-graphic-right.svg");
     background-position: left, right;
@@ -26,7 +23,8 @@ export default {
   }
 
   .landing-page-info {
-    margin: 16%;
-    margin-top: 50%;
+    margin-top: 55%;
+    margin-bottom: 55%;
+    margin-left: 20%;
   }
 </style>

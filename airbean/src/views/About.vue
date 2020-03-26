@@ -5,7 +5,7 @@
             <MenuButton />
         </nav>
 
-        <OverlayMenu class="overlay-menu"/>
+        <OverlayMenu v-if="showMenu" class="overlay-menu"/>
 
         <section>
             <h1 class="title">Vårt kaffe</h1>
@@ -71,6 +71,11 @@ export default {
   components: {
     MenuButton,
     OverlayMenu
+  },
+  computed: {
+    showMenu () {
+      return this.$store.state.isNavOpen
+    }
   }
 }
 </script>
@@ -80,7 +85,7 @@ export default {
         position: absolute;
         display: flex;
         justify-content: space-between;
-        padding: 0.5rem 0.8rem;
+        padding: 0;
     }
 
     .overlay-menu {
@@ -89,31 +94,28 @@ export default {
 
     #about {
        position: relative;
-       border: 1px solid black;
-       width: 375px;
-       height: auto;
-       margin: auto;
+       padding: 5%;
        background-color: #F3E4E1;
        background-image: url("../assets/graphics/graphics-header.svg"), url("../assets/graphics/graphics-footer.svg");
        background-position: top, bottom;
        background-repeat: no-repeat, no-repeat;
+       background-size: 100%, 100%;
    }
 
    .title {
-       margin-top: 40%;
+       margin-top: 35%;
        margin-left: 10%;
-       margin-bottom: auto;
+       margin-bottom: 5%;
        font-size: 42px;
        font-weight: bold;
-       font-family: "PT Serif";
        color: #2F2926;
    }
 
    .paragraph {
        font-size: 14px;
-       font-family: "Work Sans";
        margin-left: 10%;
        margin-right: 10%;
+       margin-bottom: 3%;
        color: #2F2926;
    }
 
@@ -123,23 +125,21 @@ export default {
 
    .eva-img {
        border-radius: 50px;
-       margin-top: 5%;
-       margin-left: 38%;
+       margin: 40%;
+       margin-top: 10%;
+       margin-bottom: 0;
    }
 
    .eva-name {
-       margin-left: 33%;
-       margin-top: auto;
-       margin-bottom: auto;
+       display: flex;
+       justify-content: center;
        color: #2F2926;
        font-size: 22px;
-       font-weight: bold;
-       font-family: "PT Serif";
    }
 
    .eva-info {
-       margin-top: auto;
-       margin-left: 41%;
+       display: flex;
+       justify-content: center;
        margin-bottom: 30%;
        color: #2F2926;
        font-family: "Work Sans";
