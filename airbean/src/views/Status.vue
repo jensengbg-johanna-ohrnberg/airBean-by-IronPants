@@ -60,6 +60,7 @@ export default {
     background: #fff;
     color: #000;
     margin-bottom: 20%;
+    cursor: pointer;
   }
 
   .orderNum {

@@ -64,7 +64,7 @@ export default {
 
 .navigation-menu {
   list-style-type: none;
-  margin-top: 60%;
+  margin-top: 70%;
 }
 
 .navigation-menu > li > a {
@@ -79,12 +79,13 @@ export default {
 
 .line {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 50%;
+  width: 15%;
+  margin-left: 42%;
 }
 
 .close-button {
-  width: 13%;
-  height: 6%;
+  width: 50px;
+  height: 50px;
   background-color: #FFFFFF;
   border-radius: 50%;
   padding: 15px;
@@ -92,62 +93,4 @@ export default {
   margin-top: 5%;
   cursor: pointer;
 }
-
-/* .close-button {
-  position: relative;
-  height: 50px;
-  width: 50px;
-  display: block;
-  border-radius: 0;
-  background-color: #ffffff;
-  border-radius: 50%;
-  margin-top: -30px;
-  cursor: pointer;
-}
-
-.img-button {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  margin-left: 25%;
-  margin-top: 25%;
-}
-
-.show-overlay {
-  overflow: hidden;
-  background-color: #2f2926;
-  height: 135vh;
-  padding: 3rem 20px 2rem 10px;
-  width: 60.2vh;
-}
-
-.show-overlay-nav {
-  list-style-type: none;
-  margin-top: 40%;
-  margin-bottom: 50%;
-}
-
-.show-overlay-nav > li > a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 32px;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 0.5em;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  cursor: pointer;
-}
-
-hr {
-  margin: auto;
-  width: 50px;
-}
-
-hr.line {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.2);
-} */
 </style>
