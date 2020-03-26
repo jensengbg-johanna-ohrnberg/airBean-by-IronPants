@@ -1,11 +1,21 @@
 <template>
   <div class="profileContainer">
-    <nav></nav>
+    <nav>
+      <MenuBtn />
+    </nav>
+    <OverlayMenu />
   </div>
 </template>
 
 <script>
-export default {}
+import MenuBtn from '../components/MenuButton.vue'
+import OverlayMenu from '../components/OverlayMenu'
+export default {
+  components: {
+    MenuBtn,
+    OverlayMenu
+  }
+}
 </script>
 
 <style></style>
