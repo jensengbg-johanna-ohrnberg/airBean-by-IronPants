@@ -5,7 +5,7 @@
       <MenuButton />
     </nav>
 
-    <OverlayMenu class="overlay-menu"/>
+    <OverlayMenu v-if="showMenu" @closeMenu="closeMenuOverlay" />
 
     <nav class="cart-nav">
       <CartBtn @clicked="openCart" />
@@ -35,6 +35,11 @@ export default {
     CartBtn,
     MenuButton,
     OverlayMenu
+  },
+  computed: {
+    showMenu () {
+      return this.$store.state.isNavOpen
+    }
   },
   methods: {
     openCart: function() {
@@ -79,10 +84,6 @@ export default {
 .main-nav {
   position: absolute;
   display: flex;
-  padding: 0.5rem 0.8rem;
-}
-
-.overlay-menu {
-  position: absolute;
+  padding: 0;
 }
 </style>

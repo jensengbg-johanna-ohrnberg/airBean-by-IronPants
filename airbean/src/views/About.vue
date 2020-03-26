@@ -5,7 +5,7 @@
             <MenuButton />
         </nav>
 
-        <OverlayMenu v-if="showMenu" class="overlay-menu"/>
+        <OverlayMenu v-if="showMenu" />
 
         <section>
             <h1 class="title">Vårt kaffe</h1>
@@ -84,12 +84,7 @@ export default {
     .main-nav {
         position: absolute;
         display: flex;
-        justify-content: space-between;
         padding: 0;
-    }
-
-    .overlay-menu {
-        position: absolute;
     }
 
     #about {
