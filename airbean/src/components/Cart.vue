@@ -80,17 +80,15 @@ export default {
   padding-top: 1rem;
 
   nav {
-    width: 100vw;
-    height: 6rem;
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
-    padding: 1rem 1.6rem 0rem 1.6rem;
+    background: initial;
+    padding-top: 0rem;
+    min-height: 4rem;
   }
   .container {
     background: #fff;
     width: 92%;
-    min-height: 90%;
+    min-height: 80%;
     overflow: scroll;
     margin: 1rem;
     @include flex();
