@@ -25,8 +25,8 @@ nav {
   background-size: cover;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 1rem 1.6rem 0rem 1.6rem;
+  align-items: flex-start;
+  padding: 1rem 1rem 0rem 1rem;
 }
 
 p {
