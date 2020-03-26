@@ -29,7 +29,7 @@ export default {
       if (localUuid === null) {
         this.$router.push('/profile')
       } else {
-        this.$router.push('/orderHistory')
+        this.$router.push('/orderstatus')
       }
     }
   }
