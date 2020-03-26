@@ -24,7 +24,7 @@ nav {
   background-image: url('./assets/graphics/graphics-header.svg');
   background-size: cover;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   padding: 1rem 1.6rem 0rem 1.6rem;
 }
