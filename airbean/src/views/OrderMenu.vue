@@ -5,7 +5,7 @@
       <MenuButton />
     </nav>
 
-    <OverlayMenu v-if="showMenu" @closeMenu="closeMenuOverlay" />
+    <OverlayMenu v-if="showMenu" />
 
     <nav class="cart-nav">
       <CartBtn @clicked="openCart" />
@@ -60,15 +60,15 @@ export default {
   align-items: center;
   background: #f3e4e1; */
   position: relative;
-  border: 1px solid black;
   background-color: #F3E4E1;
   background-image: url('../assets/graphics/graphics-header.svg'), url("../assets/graphics/graphics-footer.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: top, bottom;
-  background-size: 100%, 100%;
+  background-size: 100%;
 }
 
   .cart-nav {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     padding: 1rem 1.6rem 0rem 1.6rem;
@@ -79,11 +79,14 @@ export default {
     justify-content: center;
     margin: 1.4rem 0rem;
     font-size: 2.6rem;
+    margin-top: 25%;
   }
 
 .main-nav {
   position: absolute;
   display: flex;
   padding: 0;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 </style>

@@ -85,6 +85,7 @@ export default {
         position: absolute;
         display: flex;
         padding: 0;
+        margin: 0;
     }
 
     #about {
@@ -112,6 +113,7 @@ export default {
        margin-right: 10%;
        margin-bottom: 3%;
        color: #2F2926;
+       line-height: 1.6;
    }
 
    #bold {

@@ -27,7 +27,8 @@ export default {
   padding: 1.2rem 1.4rem;
   border: none;
   border-radius: 4rem;
-  position: relative;
+  position: absolute;
+  cursor: pointer;
 
   span {
     background: #e5674e;
@@ -39,5 +40,9 @@ export default {
     border-radius: 50%;
     padding: 0.2rem 0.4rem;
   }
+}
+
+.cartBtn:focus {
+  outline: none;
 }
 </style>
