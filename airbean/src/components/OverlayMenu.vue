@@ -65,8 +65,8 @@ section {
 }
 .close-button {
   position: sticky;
-  padding: 1.2rem;
-  margin: -0.6rem 0rem 0rem 1rem;
+  padding: 1rem;
+  margin: 0rem 0rem 0rem 0.4rem;
   border: 0;
   border-radius: 0;
   background-color: #ffffff;
@@ -99,7 +99,7 @@ section {
   top: 0;
   width: 100vw;
   height: 100%;
-  padding: 3rem 20px 2rem 10px;
+  padding: 1rem 0.4rem;
 }
 
 .show-overlay-nav {
