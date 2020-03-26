@@ -4,7 +4,7 @@
       <MenuBtn />
     </nav>
     <OverlayMenu />
-    <RegForm />
+    <RegForm @clicked="sendUserInfo" />
   </div>
 </template>
 
@@ -17,6 +17,15 @@ export default {
     MenuBtn,
     OverlayMenu,
     RegForm
+  },
+  methods: {
+    sendUserInfo: function(name, email) {
+      const key = this.$store.state.user.key.key
+      console.log(email, name)
+    }
+  },
+  created() {
+    this.$store.dispatch('getUUID')
   }
 }
 </script>
