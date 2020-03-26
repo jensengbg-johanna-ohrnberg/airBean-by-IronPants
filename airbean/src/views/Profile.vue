@@ -21,7 +21,20 @@ export default {
   methods: {
     sendUserInfo: function(name, email) {
       const key = this.$store.state.user.key.key
-      console.log(email, name)
+      const order = this.$store.state.order.orderToSend
+      const user = {
+        uuid: key,
+        name: name,
+        email: email,
+        orderList: [order]
+      }
+      console.log(user)
+      this.$store.dispatch('createNewUser', user)
+      window.localStorage.setItem('uuid', key)
+      console.log(
+        this.$store.state.user.res,
+        window.localStorage.getItem('uuid')
+      )
     }
   },
   created() {
