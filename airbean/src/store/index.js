@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import menuItems from './modules/menuItems.js'
 import cart from './modules/cart.js'
 import order from './modules/order.js'
+import user from './modules/user.js'
 
 Vue.use(Vuex)
 
@@ -11,22 +12,19 @@ export const store = Vue.observable({
 })
 
 export const mutations = {
-  toggleNav () {
+  toggleNav() {
     store.isNavOpen = !store.isNavOpen
   }
 }
 
 export default new Vuex.Store({
-  state: {
-
-  },
-  mutations: {
-  },
-  actions: {
-  },
+  state: {},
+  mutations: {},
+  actions: {},
   modules: {
     menuItems: menuItems,
     cart: cart,
-    order: order
+    order: order,
+    user: user
   }
 })
