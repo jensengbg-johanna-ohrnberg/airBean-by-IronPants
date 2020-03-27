@@ -40,9 +40,12 @@ export default {
     },
     sendOrder: function() {
       const total = this.totalP
+      const date = new Date()
+      const orderDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
       const order = {
         items: this.$store.state.cart.cart,
-        totalSum: total
+        totalSum: total,
+        orderDate: orderDate
       }
       this.$store.dispatch('sendOrder', order)
       this.$router.push('/status')
