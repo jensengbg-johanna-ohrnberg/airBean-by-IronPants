@@ -60,6 +60,7 @@ export default {
   align-items: center;
   background: #f3e4e1; */
   position: relative;
+  padding: 5%;
   background-color: #F3E4E1;
   background-image: url('../assets/graphics/graphics-header.svg'), url("../assets/graphics/graphics-footer.svg");
   background-repeat: no-repeat, no-repeat;
