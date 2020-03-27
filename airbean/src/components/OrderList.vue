@@ -2,11 +2,11 @@
   <div class="orderContainer">
     <h2>Orderhistorik</h2>
     <ul class="orderList">
-      <OrderItem />
-      <OrderItem />
-      <OrderItem />
-      <OrderItem />
-      <OrderItem />
+      <OrderItem
+        v-for="order in orderList"
+        :key="order.orderNumber"
+        v-bind:order="order"
+      />
     </ul>
     <article class="totalSum">
       <p>Totalt spenderat</p>
@@ -20,6 +20,11 @@ import OrderItem from './OrderListItem.vue'
 export default {
   components: {
     OrderItem
+  },
+  computed: {
+    orderList() {
+      return this.$store.state.user.orderList
+    }
   }
 }
 </script>
