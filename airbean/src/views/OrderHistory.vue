@@ -6,8 +6,8 @@
     <OverlayMenu />
     <img src="../assets/graphics/Profile.svg" alt="" />
     <article class="userInfo">
-      <h1>Name</h1>
-      <p>Email</p>
+      <h1>{{ name }}</h1>
+      <p>{{ email }}</p>
     </article>
     <OrderList />
   </div>
@@ -22,6 +22,18 @@ export default {
     MenuBtn,
     OverlayMenu,
     OrderList
+  },
+  created() {
+    const localUuid = window.localStorage.getItem('uuid')
+    this.$store.dispatch('getUserData', localUuid)
+  },
+  computed: {
+    name() {
+      return this.$store.state.user.userName
+    },
+    email() {
+      return this.$store.state.user.userEmail
+    }
   }
 }
 </script>
@@ -44,7 +56,13 @@ export default {
   .userInfo {
     text-align: center;
     margin-bottom: auto;
-    margin-top: 0.6rem;
+    margin-top: 0.8rem;
+
+    p {
+      margin-top: 0.2rem;
+      color: #aaa;
+      font-weight: 100;
+    }
   }
 }
 </style>
