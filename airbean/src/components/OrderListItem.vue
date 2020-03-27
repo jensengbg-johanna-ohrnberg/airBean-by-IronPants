@@ -1,19 +1,22 @@
 <template>
   <li class="orderItem">
     <article class="upperLine">
-      <p class="orderNum">6565165535</p>
-      <p>20/03/21</p>
+      <p class="orderNum">{{ order.orderNumber }}</p>
+      <p>{{ order.orderDate }}</p>
     </article>
     <article class="lowerLine">
       <p>total ordersumma</p>
-      <p>123 kr</p>
+      <p>{{ order.totalSum }} kr</p>
     </article>
   </li>
 </template>
 
 <script>
 export default {
-  name: 'OrderItem'
+  name: 'OrderItem',
+  props: {
+    order: Object
+  }
 }
 </script>
 
