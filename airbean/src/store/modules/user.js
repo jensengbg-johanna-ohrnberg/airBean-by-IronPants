@@ -1,7 +1,11 @@
 const user = {
   state: {
     key: '',
-    res: ''
+    res: '',
+    orderList: [],
+    mssg: '',
+    userName: '',
+    userEmail: ''
   },
   mutations: {
     getKey(state, key) {
@@ -9,6 +13,14 @@ const user = {
     },
     sendRes(state, data) {
       state.res = data
+    },
+    sendUserData(state, user) {
+      state.orderList = user.orderList
+      state.userName = user.name
+      state.userEmail = user.email
+    },
+    sendResData(state, mssg) {
+      state.mssg = mssg
     }
   },
   actions: {
@@ -31,6 +43,29 @@ const user = {
         .then(res => res.json())
         .then(data => {
           ctx.commit('sendRes', data.res)
+        })
+    },
+    getUserData(ctx, uuid) {
+      fetch(`http://localhost:5000/api/beans/profile/${uuid}`, {
+        method: 'GET'
+      })
+        .then(res => res.json())
+        .then(data => {
+          ctx.commit('sendUserData', data)
+        })
+    },
+    sendOrderToDB(ctx, order) {
+      fetch('http://localhost:5000/api/beans/profile/add', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ order: order })
+      })
+        .then(res => res.json())
+        .then(data => {
+          ctx.commit('sendResData', data.mssg)
         })
     }
   }
