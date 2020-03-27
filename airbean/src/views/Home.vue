@@ -8,7 +8,7 @@
 export default {
   name: 'Home',
   created () {
-    setTimeout(() => this.$router.push('/about'), 3000)
+    setTimeout(() => this.$router.push('/about'), 2000)
   }
 }
 </script>

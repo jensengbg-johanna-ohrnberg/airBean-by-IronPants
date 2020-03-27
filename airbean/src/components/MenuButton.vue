@@ -33,7 +33,7 @@ export default {
     position: absolute;
     display: flex;
     justify-content: center;
-    margin: 16%;
+    margin: 18%;
     height: 30px;
     width: 32px;
   }

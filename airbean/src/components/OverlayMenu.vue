@@ -24,7 +24,7 @@
 export default {
   data () {
     return {
-      isNavOpen: false
+      isNavOpen: true
     }
   },
   methods: {
@@ -40,8 +40,11 @@ export default {
     navToMyProfile() {
       this.$router.push('/createProfile')
     },
-    navToOrderstatus() {
+    /* navToOrderstatus() {
       this.$router.push('/status')
+    }, */
+    navToOrderstatus() {
+      this.$router.push('/loader')
     }
   },
   watch: {
