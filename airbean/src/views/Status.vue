@@ -29,6 +29,9 @@ export default {
       if (localUuid === null) {
         this.$router.push('/profile')
       } else {
+        const order = this.$store.state.order.orderToSend
+        this.$store.dispatch('sendOrderToDB', order)
+        console.log(order)
         this.$router.push('/orderstatus')
       }
     }
