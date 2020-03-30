@@ -18,14 +18,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isNavOpen: true
-    }
-  },
   methods: {
     closeNav: function() {
-      this.isNavOpen = !this.isNavOpen
+      this.$store.commit('toggleNav', false)
     },
     navToMenu: function() {
       this.$router.push('/menu')
@@ -61,7 +56,7 @@ export default {
 <style scoped>
 section {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 .close-button {
   position: sticky;
@@ -83,12 +78,17 @@ section {
   background-color: #2f2926;
   position: absolute;
   top: 0;
+  bottom: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding: 1rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .navigation-menu {
+  margin: 3rem 0rem;
   list-style-type: none;
   cursor: pointer;
 }
