@@ -15,13 +15,13 @@
         />
       </button>
 
-      <ul class="sho
+      <ul>
         <li><a @click="navToMenu">Meny</a></li>
-        <span><hr class="line"/></span>
+        <span><hr class="line"></span>
         <li><a @click="navToAbout">Vårt kaffe</a></li>
-        <span><hr class="line"/></span>
+        <span><hr class="line"></span>
         <li><a @click="navToMyProfile">Min Profil</a></li>
-        <span><hr class="line"/></span>
+        <span><hr class="line"></span>
         <li><a @click="navToOrderstatus">Orderstatus</a></li>
       </ul>
     </div>
