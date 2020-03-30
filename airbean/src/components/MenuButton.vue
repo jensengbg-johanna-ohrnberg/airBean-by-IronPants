@@ -2,8 +2,7 @@
 
   <div
     id="burger"
-    :class="{ active: isBurgerMenuActive }"
-    @click.prevent="toggle"
+    @click="openNav"
   >
     <img src="../assets/graphics/navicon.svg" alt="navicon" />
 
@@ -13,14 +12,19 @@
 <script>
 
 export default {
-  computed: {
-    isBurgerMenuActive() {
-      return store.isNavOpen
+  data () {
+    return {
+      isNavOpen: false
     }
   },
   methods: {
-    toggle() {
-      mutations.toggleNav()
+    openNav () {
+      this.isNavOpen = !this.isNavOpen
+    }
+  },
+  watch: {
+    isNavOpen () {
+      this.$store.commit('toggleNav', this.isNavOpen)
     }
   }
 }

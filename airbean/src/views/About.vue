@@ -4,7 +4,7 @@
       <MenuButton />
     </nav>
 
-    <OverlayMenu class="overlay-menu" />
+    <OverlayMenu class="overlay-menu" v-if="showMenu" />
 
     <section>
       <h1 class="title">Vårt kaffe</h1>

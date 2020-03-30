@@ -43,19 +43,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.overlay-menu {
+  position: absolute;
+}
 .wrapper {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background: #f3e4e1; */
   position: relative;
-  padding: 5%;
+  width: 100vw;
+  min-height: 100vh;
   background-color: #F3E4E1;
   background-image: url('../assets/graphics/graphics-header.svg'), url("../assets/graphics/graphics-footer.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: top, bottom;
-  background-size: 100%;
 }
   h1 {
     display: flex;
