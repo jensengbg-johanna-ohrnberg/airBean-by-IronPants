@@ -47,14 +47,16 @@ export default {
   position: absolute;
 }
 .wrapper {
-  position: relative;
   width: 100vw;
   min-height: 100vh;
   background-color: #f3e4e1;
-  background-image: url('../assets/graphics/graphics-header.svg'),
-    url('../assets/graphics/graphics-footer.svg');
-  background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
+  background-image: url('../assets/graphics/graphics-footer.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 h1 {
   display: flex;
