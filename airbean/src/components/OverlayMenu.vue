@@ -54,10 +54,6 @@ export default {
 </script>
 
 <style scoped>
-section {
-  width: 100vw;
-  min-height: 100vh;
-}
 .close-button {
   position: sticky;
   padding: 1rem;
@@ -80,7 +76,7 @@ section {
   top: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1rem 0.4rem;
   display: flex;
   flex-direction: column;
