@@ -15,11 +15,10 @@ export default {
 <style scoped>
 .loading-container {
   background-color: #e5674e;
-}
-
-.loader-img {
-  margin-top: 55%;
-  margin-bottom: 55%;
-  margin-left: 45%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
