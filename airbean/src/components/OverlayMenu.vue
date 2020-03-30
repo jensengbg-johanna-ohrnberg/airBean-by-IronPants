@@ -1,31 +1,19 @@
 <template>
-  <transition name="slide">
-    <div v-if="isOverlayOpen" class="show-overlay">
-      <button
-        type="button"
-        class="close-button"
-        title="Menu"
-        @click="closeOverlay"
-        v-if="isOverlayOpen"
-      >
-        <img
-          class="img-button"
-          src="../assets/graphics/close.svg"
-          alt="close"
-        />
-      </button>
+  <div v-if="closeMenu" class="show-overlay">
+    <button type="button" class="close-button" title="Menu" @click="closeNav">
+      <img class="img-button" src="../assets/graphics/close.svg" alt="close" />
+    </button>
 
-      <ul class="show-overlay">
-        <li><a @click="navToMenu">Meny</a></li>
-        <span><hr class="line"/></span>
-        <li><a @click="navToAbout">Vårt kaffe</a></li>
-        <span><hr class="line"/></span>
-        <li><a @click="navToMyProfile">Min Profil</a></li>
-        <span><hr class="line"/></span>
-        <li><a @click="navToOrderstatus">Orderstatus</a></li>
-      </ul>
-    </div>
-  </transition>
+    <ul class="navigation-menu">
+      <li><a @click="navToMenu">Meny</a></li>
+      <span><hr class="line"/></span>
+      <li><a @click="navToAbout">Vårt kaffe</a></li>
+      <span><hr class="line"/></span>
+      <li><a @click="navToMyProfile">Min Profil</a></li>
+      <span><hr class="line"/></span>
+      <li><a @click="navToOrderstatus">Orderstatus</a></li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -45,21 +33,28 @@ export default {
     },
     navToAbout: function() {
       this.$router.push('/about')
-      this.$store.mutations.toggleNav()
+      /* mutations.toggleNav() */
     },
     navToMyProfile: function() {
       this.$router.push('/profile')
-      this.$store.mutations.toggleNav()
+      /* mutations.toggleNav() */
     },
     /* navToOrderstatus() {
       this.$router.push('/status')
     }, */
     navToOrderstatus: function() {
       this.$router.push('/orderstatus')
-      this.$store.mutations.toggleNav()
-    },
-    closeOverlay: function() {
-      this.$store.mutations.toggleNav()
+      /* mutations.toggleNav() */
+    }
+  },
+  computed: {
+    closeMenu() {
+      return this.$store.state.isNavOpen
+    }
+  },
+  watch: {
+    isNavOpen() {
+      this.$store.commit('toggleNav', this.isNavOpen)
     }
   }
 }
@@ -75,29 +70,15 @@ section {
   padding: 1rem;
   margin: 0rem 0rem 0rem 0.4rem;
   border: 0;
-  border-radius: 0;
   background-color: #ffffff;
-  pointer-events: all;
   border-radius: 50%;
+  outline: none;
 }
 
 .img-button {
   position: sticky;
   display: flex;
   justify-content: center;
-  width: 25px;
-  height: 25px;
-}
-
-.slide-enter,
-.slide-leave-to {
-  transition: all 200ms ease-in-out 0s;
-}
-
-.close-overlay {
-  background-color: #2f2926;
-  position: sticky;
-  cursor: pointer;
 }
 
 .show-overlay {
@@ -112,10 +93,9 @@ section {
 .navigation-menu {
   list-style-type: none;
   cursor: pointer;
-  margin: 6rem 0rem;
 }
 
-.navigation-menu > li > a {
+a {
   display: flex;
   justify-content: center;
   cursor: pointer;
