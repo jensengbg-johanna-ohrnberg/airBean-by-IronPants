@@ -6,19 +6,9 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isNavOpen: false
-    }
-  },
   methods: {
-    openNav() {
-      this.isNavOpen = !this.isNavOpen
-    }
-  },
-  watch: {
-    isNavOpen() {
-      this.$store.commit('toggleNav', this.isNavOpen)
+    openNav: function() {
+      this.$store.commit('toggleNav', true)
     }
   }
 }
