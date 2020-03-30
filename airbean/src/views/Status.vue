@@ -56,7 +56,7 @@ export default {
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 2.2rem;
   }
 
   .btn {
