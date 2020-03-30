@@ -29,22 +29,20 @@ export default {
     },
     navToMenu: function() {
       this.$router.push('/menu')
-      this.$store.mutations.toggleNav()
+      this.$store.commit('toggleNav')
     },
     navToAbout: function() {
       this.$router.push('/about')
-      /* mutations.toggleNav() */
+      this.$store.commit('toggleNav')
     },
     navToMyProfile: function() {
       this.$router.push('/profile')
-      /* mutations.toggleNav() */
+      this.$store.commit('toggleNav')
     },
-    /* navToOrderstatus() {
-      this.$router.push('/status')
-    }, */
+
     navToOrderstatus: function() {
       this.$router.push('/orderstatus')
-      /* mutations.toggleNav() */
+      this.$store.commit('toggleNav')
     }
   },
   computed: {
