@@ -4,7 +4,7 @@
       <MenuBtn />
       <CartBtn @clicked="openCart" />
     </nav>
-    <OverlayMenu class="overlay-menu" />
+    <OverlayMenu />
     <h1>Meny</h1>
     <MenuList />
     <cart-overlay @closeCart="closeCartOverlay" v-if="showCartOverlay" />
@@ -43,9 +43,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.overlay-menu {
-  position: absolute;
-}
 .wrapper {
   width: 100vw;
   min-height: 100vh;
@@ -57,6 +54,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 h1 {
   display: flex;
