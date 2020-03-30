@@ -50,24 +50,16 @@ export default {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #F3E4E1;
-  background-image: url('../assets/graphics/graphics-header.svg'), url("../assets/graphics/graphics-footer.svg");
+  background-color: #f3e4e1;
+  background-image: url('../assets/graphics/graphics-header.svg'),
+    url('../assets/graphics/graphics-footer.svg');
   background-repeat: no-repeat, no-repeat;
   background-position: top, bottom;
 }
-  h1 {
-    display: flex;
-    justify-content: center;
-    margin: 1.4rem 0rem;
-    font-size: 2.6rem;
-    margin-top: 25%;
-  }
-
-.main-nav {
-  position: absolute;
+h1 {
   display: flex;
-  padding: 0;
-  margin-top: 5%;
-  margin-left: 5%;
+  justify-content: center;
+  margin: 1.4rem 0rem;
+  font-size: 2.6rem;
 }
 </style>
