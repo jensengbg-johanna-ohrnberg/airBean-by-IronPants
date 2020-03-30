@@ -15,7 +15,7 @@
         />
       </button>
 
-      <ul class="sho
+      <ul class="show-overlay">
         <li><a @click="navToMenu">Meny</a></li>
         <span><hr class="line"/></span>
         <li><a @click="navToAbout">Vårt kaffe</a></li>
@@ -29,15 +29,14 @@
 </template>
 
 <script>
-
 export default {
-  data () {
+  data() {
     return {
       isNavOpen: true
     }
   },
   methods: {
-    closeNav () {
+    closeNav() {
       this.isNavOpen = !this.isNavOpen
     },
     navToMenu() {
@@ -119,7 +118,7 @@ section {
   justify-content: center;
   cursor: pointer;
   font-size: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -133,7 +132,7 @@ section {
 .close-button {
   width: 50px;
   height: 50px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50%;
   padding: 15px;
   margin-left: 5%;
