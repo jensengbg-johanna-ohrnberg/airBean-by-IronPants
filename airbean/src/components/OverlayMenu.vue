@@ -36,29 +36,31 @@ export default {
     }
   },
   methods: {
-    closeNav() {
+    closeNav: function() {
       this.isNavOpen = !this.isNavOpen
     },
-    navToMenu() {
+    navToMenu: function() {
       this.$router.push('/menu')
-      mutations.toggleNav()
+      this.$store.mutations.toggleNav()
     },
-    navToAbout() {
+    navToAbout: function() {
       this.$router.push('/about')
-      mutations.toggleNav()
+      this.$store.mutations.toggleNav()
     },
-    navToMyProfile() {
+    navToMyProfile: function() {
       this.$router.push('/profile')
-      mutations.toggleNav()
+      this.$store.mutations.toggleNav()
     },
     /* navToOrderstatus() {
       this.$router.push('/status')
     }, */
-    navToOrderstatus() {
+    navToOrderstatus: function() {
       this.$router.push('/orderstatus')
-      mutations.toggleNav()
+      this.$store.mutations.toggleNav()
     },
-    closeOverlay: mutations.toggleNav
+    closeOverlay: function() {
+      this.$store.mutations.toggleNav()
+    }
   }
 }
 </script>
