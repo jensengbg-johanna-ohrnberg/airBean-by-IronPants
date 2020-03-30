@@ -29,13 +29,6 @@ export default {
   visibility: hidden;
 }
 
-button {
-  cursor: pointer;
-  margin-top: 12px;
-  margin-left: 6px;
-  outline: 0;
-}
-
 #burger {
   background-color: #ffffff;
   border-radius: 50%;
