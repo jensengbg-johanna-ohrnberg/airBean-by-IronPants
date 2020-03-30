@@ -1,29 +1,23 @@
 <template>
-
-  <div
-    id="burger"
-    @click="openNav"
-  >
+  <div id="burger" @click="openNav">
     <img src="../assets/graphics/navicon.svg" alt="navicon" />
-
   </div>
 </template>
 
 <script>
-
 export default {
-  data () {
+  data() {
     return {
       isNavOpen: false
     }
   },
   methods: {
-    openNav () {
+    openNav() {
       this.isNavOpen = !this.isNavOpen
     }
   },
   watch: {
-    isNavOpen () {
+    isNavOpen() {
       this.$store.commit('toggleNav', this.isNavOpen)
     }
   }
