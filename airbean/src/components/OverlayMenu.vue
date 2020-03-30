@@ -99,14 +99,14 @@ a {
   cursor: pointer;
   font-size: 32px;
   color: #ffffff;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .line {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 15%;
-  margin-left: 42%;
+  width: 5%;
+  margin-left: 47%;
 }
 
 .close-button {
