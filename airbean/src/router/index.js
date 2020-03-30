@@ -37,12 +37,12 @@ const routes = [
     component: OrderStatus
   },
   {
-    path: '/createProfile',
+    path: '/profile',
     name: 'Create profile',
     component: Profile
   },
   {
-    path: '/orderHistory',
+    path: '/orderstatus',
     name: 'Order history',
     component: OrderHistory
   }

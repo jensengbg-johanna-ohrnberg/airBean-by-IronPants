@@ -18,12 +18,15 @@ export default {}
   font-family: 'PT Serif', serif;
 }
 
-#app {
-  width: 30%;
-  height: auto;
-  margin: 35%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+nav {
+  width: 100vw;
+  min-height: 6.8rem;
+  background-image: url('./assets/graphics/graphics-header.svg');
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 1rem 0rem 1rem;
 }
 
 p {
@@ -33,12 +36,12 @@ p {
 
 .btn {
   background: #000;
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2.4rem;
   margin: 1rem 0rem;
   color: #fff;
   border: none;
   border-radius: 3rem;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: bolder;
 }
 </style>

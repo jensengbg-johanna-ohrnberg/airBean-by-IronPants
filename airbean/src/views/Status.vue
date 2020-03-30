@@ -27,9 +27,12 @@ export default {
       const localUuid = window.localStorage.getItem('uuid')
       console.log(localUuid)
       if (localUuid === null) {
-        this.$router.push('/createProfile')
+        this.$router.push('/profile')
       } else {
-        this.$router.push('/orderHistory')
+        const order = this.$store.state.order.orderToSend
+        this.$store.dispatch('sendOrderToDB', order)
+        console.log(order)
+        this.$router.push('/orderstatus')
       }
     }
   }

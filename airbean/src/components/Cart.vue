@@ -40,9 +40,12 @@ export default {
     },
     sendOrder: function() {
       const total = this.totalP
+      const date = new Date()
+      const orderDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
       const order = {
         items: this.$store.state.cart.cart,
-        totalSum: total
+        totalSum: total,
+        orderDate: orderDate
       }
       this.$store.dispatch('sendOrder', order)
       this.$router.push('/status')
@@ -86,13 +89,14 @@ export default {
     height: 6rem;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    padding: 1rem 1.6rem 0rem 1.6rem;
+    background: initial;
+    padding-top: 0rem;
+    min-height: 4rem;
   }
   .container {
     background: #fff;
     width: 92%;
-    min-height: 90%;
+    min-height: 80%;
     overflow: scroll;
     margin: 1rem;
     @include flex();

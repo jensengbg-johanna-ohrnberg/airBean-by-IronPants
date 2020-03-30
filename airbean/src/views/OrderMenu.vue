@@ -1,15 +1,10 @@
 <template>
   <div class="wrapper">
-
-    <nav class="main-nav">
-      <MenuButton />
-    </nav>
-
-    <OverlayMenu v-if="showMenu" />
-
-    <nav class="cart-nav">
+    <nav>
+      <MenuBtn />
       <CartBtn @clicked="openCart" />
     </nav>
+    <OverlayMenu class="overlay-menu" />
     <h1>Meny</h1>
     <MenuList />
     <cart-overlay @closeCart="closeCartOverlay" v-if="showCartOverlay" />
@@ -20,7 +15,7 @@
 import MenuList from '../components/MenuList.vue'
 import CartOverlay from '../components/Cart.vue'
 import CartBtn from '../components/CartBtn.vue'
-import MenuButton from '../components/MenuButton'
+import MenuBtn from '../components/MenuButton.vue'
 import OverlayMenu from '../components/OverlayMenu'
 
 export default {
@@ -33,13 +28,8 @@ export default {
     MenuList,
     CartOverlay,
     CartBtn,
-    MenuButton,
+    MenuBtn,
     OverlayMenu
-  },
-  computed: {
-    showMenu () {
-      return this.$store.state.isNavOpen
-    }
   },
   methods: {
     openCart: function() {
@@ -67,14 +57,6 @@ export default {
   background-position: top, bottom;
   background-size: 100%;
 }
-
-  .cart-nav {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem 1.6rem 0rem 1.6rem;
-  }
-
   h1 {
     display: flex;
     justify-content: center;
