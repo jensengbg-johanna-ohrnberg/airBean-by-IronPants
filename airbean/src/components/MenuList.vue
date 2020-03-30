@@ -26,6 +26,6 @@ export default {
 
 <style lang="scss" csoped>
 ul {
-  margin-bottom: auto;
+  margin-bottom: 6rem;
 }
 </style>
