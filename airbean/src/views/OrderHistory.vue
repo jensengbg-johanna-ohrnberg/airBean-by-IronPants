@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .historyContainer {
+  position: relative;
   background: #2f2926;
   width: 100vw;
   min-height: 100vh;
