@@ -27,7 +27,7 @@ export default {
   padding: 1.2rem 1.4rem;
   border: none;
   border-radius: 4rem;
-  position: absolute;
+  position: relative;
   cursor: pointer;
 
   span {
