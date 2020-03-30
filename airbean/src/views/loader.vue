@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .loading-container {
-  background-color: #2f2926;
+  background-color: #e5674e;
 }
 
 .loader-img {
