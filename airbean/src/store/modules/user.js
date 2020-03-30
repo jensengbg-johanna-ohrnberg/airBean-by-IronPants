@@ -25,7 +25,7 @@ const user = {
   },
   actions: {
     getUUID(ctx) {
-      fetch('http://localhost:5000/api/beans/key', { mehtod: 'GET' })
+      fetch('http://localhost:5000/api/beans/key', { method: 'GET' })
         .then(res => res.json())
         .then(data => {
           ctx.commit('getKey', data)
