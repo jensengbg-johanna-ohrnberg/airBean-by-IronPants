@@ -6,6 +6,7 @@ import Menu from '../views/OrderMenu.vue'
 import OrderStatus from '../views/Status.vue'
 import Profile from '../views/Profile.vue'
 import OrderHistory from '../views/OrderHistory.vue'
+import LoadingPage from '../views/loader.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const routes = [
     path: '/menu',
     name: 'Menu',
     component: Menu
+  },
+  {
+    path: '/loader',
+    name: 'LoadingPage',
+    component: LoadingPage
   },
   {
     path: '/status',

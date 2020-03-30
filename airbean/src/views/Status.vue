@@ -3,12 +3,12 @@
     <p class="orderNum">
       ordernummer: <strong>{{ orderNum }}</strong>
     </p>
-    <img src="../assets/graphics/drone.svg" alt="" />
+    <img class="drone-img" src="../assets/graphics/drone.svg" alt="" />
     <h1>Din beställning är på väg!</h1>
     <p class="eta">
       <strong>{{ eta }}</strong> minuter
     </p>
-    <button class="btn" @click="conferm">Ok, coo!</button>
+    <button class="btn" @click="conferm">Ok, cool!</button>
   </div>
 </template>
 
@@ -42,8 +42,7 @@ export default {
 <style lang="scss" scoped>
 .statusContainer {
   background: #e5674e;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,17 +55,30 @@ export default {
     font-family: 'Work Sans', sans-serif;
   }
 
+  h1 {
+    font-size: 42px;
+  }
+
   .btn {
     background: #fff;
     color: #000;
+    margin-bottom: 20%;
+    cursor: pointer;
   }
 
   .orderNum {
     color: #fffb;
+    margin-bottom: 20%;
+  }
+
+  .drone-img {
+    margin-bottom: 20%;
   }
 
   .eta {
     font-size: 1.4rem;
+    margin-bottom: 20%;
+    margin-top: 20%;
   }
 }
 </style>

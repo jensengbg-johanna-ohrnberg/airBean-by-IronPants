@@ -1,14 +1,15 @@
 <template>
+
   <div
     id="burger"
     :class="{ active: isBurgerMenuActive }"
     @click.prevent="toggle"
   >
     <img src="../assets/graphics/navicon.svg" alt="navicon" />
+
   </div>
 </template>
 <script>
-import { store, mutations } from '../store/index'
 
 export default {
   computed: {

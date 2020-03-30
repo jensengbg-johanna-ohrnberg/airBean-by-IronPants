@@ -15,7 +15,7 @@
         />
       </button>
 
-      <ul class="show-overlay-nav">
+      <ul class="sho
         <li><a @click="navToMenu">Meny</a></li>
         <span><hr class="line"/></span>
         <li><a @click="navToAbout">Vårt kaffe</a></li>
@@ -27,16 +27,19 @@
     </div>
   </transition>
 </template>
+
 <script>
-import { store, mutations } from '../store/index'
 
 export default {
-  computed: {
-    isOverlayOpen() {
-      return store.isNavOpen
+  data () {
+    return {
+      isNavOpen: true
     }
   },
   methods: {
+    closeNav () {
+      this.isNavOpen = !this.isNavOpen
+    },
     navToMenu() {
       this.$router.push('/menu')
       mutations.toggleNav()
@@ -49,6 +52,9 @@ export default {
       this.$router.push('/profile')
       mutations.toggleNav()
     },
+    /* navToOrderstatus() {
+      this.$router.push('/status')
+    }, */
     navToOrderstatus() {
       this.$router.push('/orderstatus')
       mutations.toggleNav()
@@ -102,30 +108,36 @@ section {
   padding: 1rem 0.4rem;
 }
 
-.show-overlay-nav {
+.navigation-menu {
   list-style-type: none;
   cursor: pointer;
   margin: 6rem 0rem;
 }
 
-.show-overlay-nav > li > a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 32px;
+.navigation-menu > li > a {
   display: flex;
   justify-content: center;
-  padding-bottom: 0.5em;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  cursor: pointer;
+  font-size: 32px;
+  color: #FFFFFF;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-hr {
-  margin: auto;
-  width: 50px;
-}
-
-hr.line {
+.line {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.2);
+  width: 15%;
+  margin-left: 42%;
+}
+
+.close-button {
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 15px;
+  margin-left: 5%;
+  margin-top: 5%;
+  cursor: pointer;
 }
 </style>

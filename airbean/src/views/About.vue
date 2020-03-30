@@ -54,6 +54,11 @@ export default {
   components: {
     MenuButton,
     OverlayMenu
+  },
+  computed: {
+    showMenu () {
+      return this.$store.state.isNavOpen
+    }
   }
 }
 </script>
