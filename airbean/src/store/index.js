@@ -7,19 +7,15 @@ import user from './modules/user.js'
 
 Vue.use(Vuex)
 
-export const store = Vue.observable({
-  isNavOpen: false
-})
-
-export const mutations = {
-  toggleNav() {
-    store.isNavOpen = !store.isNavOpen
-  }
-}
-
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    isNavOpen: false
+  },
+  mutations: {
+    toggleNav (state, toggle) {
+      state.isNavOpen = toggle
+    }
+  },
   actions: {},
   modules: {
     menuItems: menuItems,
