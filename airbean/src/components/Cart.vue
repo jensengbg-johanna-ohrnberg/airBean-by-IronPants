@@ -85,7 +85,7 @@ export default {
   padding-top: 1rem;
 
   nav {
-    width: 30vw;
+    width: 100vw;
     height: 6rem;
     display: flex;
     justify-content: flex-end;
