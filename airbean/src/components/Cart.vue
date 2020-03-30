@@ -48,7 +48,7 @@ export default {
         orderDate: orderDate
       }
       this.$store.dispatch('sendOrder', order)
-      this.$router.push('/status')
+      this.$router.push('/loader')
     }
   },
   data: () => {
