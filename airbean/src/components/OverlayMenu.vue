@@ -88,9 +88,12 @@ section {
 }
 
 .navigation-menu {
-  margin: 3rem 0rem;
+  margin: 4rem 0rem;
   list-style-type: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
@@ -99,14 +102,12 @@ a {
   cursor: pointer;
   font-size: 32px;
   color: #ffffff;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 2rem 0rem;
 }
 
 .line {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 5%;
-  margin-left: 47%;
+  width: 5rem;
 }
 
 .close-button {
