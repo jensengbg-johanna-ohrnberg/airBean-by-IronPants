@@ -71,9 +71,9 @@ export default {
 }
 
 .wrapper-cart {
-  /* width: 100vw;
-  height: 100vh;
-  overflow-y: scroll; */
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: scroll;
   position: absolute;
   @include flex();
   justify-content: flex-start;
@@ -82,7 +82,7 @@ export default {
   left: 0;
   bottom: 0;
   background: #000d;
-  /* padding-top: 1rem; */
+  padding-top: 1rem;
 
   nav {
     width: 30vw;
