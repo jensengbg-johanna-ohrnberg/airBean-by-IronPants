@@ -10,7 +10,7 @@
     </ul>
     <article class="totalSum">
       <p>Totalt spenderat</p>
-      <p>1225 kr</p>
+      <p>{{ this.sum }} kr</p>
     </article>
   </div>
 </template>
@@ -24,6 +24,14 @@ export default {
   computed: {
     orderList() {
       return this.$store.state.user.orderList
+    },
+    sum() {
+      const list = this.$store.state.user.orderList
+      let sum = 0
+      list.forEach(elem => {
+        sum += elem.totalSum
+      })
+      return sum
     }
   }
 }
