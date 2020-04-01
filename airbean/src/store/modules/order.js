@@ -1,10 +1,18 @@
 const order = {
   state: {
-    orderToSend: ''
+    orderToSend: '',
+    orderRecived: false,
+    statBtn: false
   },
   mutations: {
     saveOrder(state, order) {
       state.orderToSend = order
+    },
+    orderStat(state, val) {
+      state.orderRecived = val
+    },
+    statBtn(state, val) {
+      state.statBtn = val
     }
   },
   actions: {
