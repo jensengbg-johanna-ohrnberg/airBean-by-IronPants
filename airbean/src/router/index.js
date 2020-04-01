@@ -42,7 +42,7 @@ const routes = [
     component: Profile
   },
   {
-    path: '/orderstatus',
+    path: '/orderhistory',
     name: 'Order history',
     component: OrderHistory
   }

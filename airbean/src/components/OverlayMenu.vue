@@ -31,13 +31,24 @@ export default {
       this.$store.commit('toggleNav')
     },
     navToMyProfile: function() {
-      this.$router.push('/profile')
+      const localUUID = localStorage.getItem('uuid')
+      console.log(localUUID)
+      if (localUUID === null) {
+        this.$router.push('/profile')
+      } else {
+        this.$router.push('/orderhistory')
+      }
       this.$store.commit('toggleNav')
     },
 
     navToOrderstatus: function() {
-      this.$router.push('/orderstatus')
-      this.$store.commit('toggleNav')
+      const order = this.$store.state.order.orderToSend
+      if (order === '') {
+        alert('Place an order to see your Order status!')
+      } else {
+        this.$router.push('/status')
+        this.$store.commit('toggleNav')
+      }
     }
   },
   computed: {
