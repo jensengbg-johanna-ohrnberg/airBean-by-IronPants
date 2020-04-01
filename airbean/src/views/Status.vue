@@ -40,10 +40,7 @@ export default {
       return this.$store.state.order.statBtn
     }
   },
-  mounted() {
-    console.log(this.state)
-    console.log(this.statBtn, 'btn')
-  },
+
   methods: {
     conferm: function() {
       const localUuid = window.localStorage.getItem('uuid')
