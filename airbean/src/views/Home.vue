@@ -8,6 +8,8 @@
 export default {
   name: 'Home',
   created() {
+    console.log('adasdas')
+    window.localStorage.clear()
     setTimeout(() => this.$router.push('/about'), 3000)
   }
 }
