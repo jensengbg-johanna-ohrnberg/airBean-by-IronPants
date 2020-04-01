@@ -41,13 +41,8 @@ export default {
     },
 
     navToOrderstatus: function() {
-      const order = this.$store.state.order.orderToSend
-      if (order === '') {
-        alert('Place an order to see your Order status!')
-      } else {
-        this.$router.push('/status')
-        this.$store.commit('toggleNav')
-      }
+      this.$router.push('/status')
+      this.$store.commit('toggleNav')
     }
   },
   computed: {
