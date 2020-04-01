@@ -25,13 +25,11 @@ export default {
   methods: {
     conferm: function() {
       const localUuid = window.localStorage.getItem('uuid')
-      console.log(localUuid)
       if (localUuid === null) {
         this.$router.push('/profile')
       } else {
         const order = this.$store.state.order.orderToSend
         this.$store.dispatch('sendOrderToDB', order)
-        console.log(order)
         this.$router.push('/orderhistory')
       }
     }
