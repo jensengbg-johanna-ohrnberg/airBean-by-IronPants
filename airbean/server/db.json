@@ -1,0 +1,82 @@
+{
+  "user": {
+    "uuid": "780bc852-5502-4906-867c-2c87443733b9",
+    "name": "Clark Kent",
+    "email": "clark.super@yahoo.com",
+    "orderList": [
+      {
+        "items": [
+          {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39,
+            "quant": 1
+          },
+          {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49,
+            "quant": 2
+          },
+          {
+            "id": 3,
+            "title": "Cappuccino",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49,
+            "quant": 3
+          }
+        ],
+        "totalSum": 284,
+        "orderDate": "27/2/2020",
+        "orderNumber": "AB1585292683873X",
+        "eta": 22
+      },
+      {
+        "items": [
+          {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39,
+            "quant": 2
+          },
+          {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49,
+            "quant": 1
+          }
+        ],
+        "totalSum": 127,
+        "orderDate": "27/2/2020",
+        "orderNumber": "AB1585293960042X",
+        "eta": 26
+      },
+      {
+        "items": [
+          {
+            "id": 1,
+            "title": "Bryggkaffe",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 39,
+            "quant": 1
+          },
+          {
+            "id": 2,
+            "title": "Caffè Doppio",
+            "desc": "Bryggd på månadens bönor.",
+            "price": 49,
+            "quant": 2
+          }
+        ],
+        "totalSum": 137,
+        "orderDate": "1/3/2020",
+        "orderNumber": "AB1585723538139X",
+        "eta": 15
+      }
+    ]
+  }
+}
