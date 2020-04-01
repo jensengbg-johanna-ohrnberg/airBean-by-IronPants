@@ -49,6 +49,8 @@ export default {
       }
       this.$store.dispatch('sendOrder', order)
       this.$router.push('/loader')
+      this.$store.commit('orderStat', true)
+      this.$store.commit('statBtn', true)
     }
   },
   data: () => {
