@@ -32,7 +32,7 @@ export default {
         const order = this.$store.state.order.orderToSend
         this.$store.dispatch('sendOrderToDB', order)
         console.log(order)
-        this.$router.push('/orderstatus')
+        this.$router.push('/orderhistory')
       }
     }
   }
