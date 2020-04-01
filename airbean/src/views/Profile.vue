@@ -35,7 +35,7 @@ export default {
         this.$store.state.user.res,
         window.localStorage.getItem('uuid')
       )
-      this.$router.push('/orderstatus')
+      this.$router.push('/orderhistory')
     }
   },
   created() {
