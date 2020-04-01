@@ -26,6 +26,7 @@ export default {
   created() {
     const localUuid = window.localStorage.getItem('uuid')
     this.$store.dispatch('getUserData', localUuid)
+    this.$store.commit('statBtn', false)
   },
   computed: {
     name() {
