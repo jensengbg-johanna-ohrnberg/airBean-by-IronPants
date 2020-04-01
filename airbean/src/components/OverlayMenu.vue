@@ -32,7 +32,6 @@ export default {
     },
     navToMyProfile: function() {
       const localUUID = localStorage.getItem('uuid')
-      console.log(localUUID)
       if (localUUID === null) {
         this.$router.push('/profile')
       } else {
